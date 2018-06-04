@@ -3,7 +3,7 @@
 // }
 
 
-document.getElementById('postInputForm').addEventListener('publish', savePost);
+document.getElementById('postInputForm').addEventListener('submit', savePost);
 
   function savePost(e){
       var postId = chance.guid(); //generate spost id from chance library
@@ -47,7 +47,7 @@ document.getElementById('postInputForm').addEventListener('publish', savePost);
     var posts = JSON.parse(localStorage.getItem('posts'));
     var postsListe = document.getElementById('postsList');
 
-      issuesList.innerHTML = '';
+      postsList.innerHTML = '';
 
     for (var i = 0; i < posts.length; i++) {
       var id = posts[i].id;
@@ -57,9 +57,9 @@ document.getElementById('postInputForm').addEventListener('publish', savePost);
       // var severity = posts[i].severity;
       // var assignedTo = posts[i].assignedTo;
       // var status = posts[i].status;
-  }
 
-  issuesList.innerHTML +=   '<div class="well">'+
+
+  postsList.innerHTML +=   '<div class="well">'+
                               '<h6>Post ID: ' + id + '</h6>'+
                               //'<p><span class="label label-info">' + status + '</span></p>'+
                               '<p><span class="glyphicon glyphicon-time"></span> ' + title + '</p>'+
@@ -68,8 +68,9 @@ document.getElementById('postInputForm').addEventListener('publish', savePost);
                               //'<p><span class="glyphicon glyphicon-time"></span> ' + severity + '</p>'+
                               //'<p><span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>'+
                               //'<a href="#" onclick="setStatusClosed(\''+id+'\')" class="btn btn-warning">Close</a> '+
-                              '<a href="#" onclick="deleteIssue(\''+id+'\')" class="btn btn-danger">Delete</a>'+
+                              '<a href="#" onclick="deletePost(\''+id+'\')" class="btn btn-danger">Delete</a>'+
                               '</div>';
+                            }
 }
 
   function deletePost(id){

@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>SIMPLE BLOG</title>
   </head>
-  <body>
+
+  <body onload="fetchPosts()">
     <h1>Blog Title</h1>
     <h3>Add New Post:</h3>
     <form id="postInputForm">
@@ -16,7 +17,7 @@
                   <label for="postBodyInput">Body</label>
                   <input type="text" class="form-control" id="postBodyInput" placeholder="Enter post here ... ">
                 </div>
-         <button type="publish" class="btn btn-primary">Publish</button>
+         <button type="submit" class="btn btn-primary">Publish</button>
     </form>
 
 
